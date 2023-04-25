@@ -4,3 +4,23 @@ Content-Type: application/json
 {
    "name": "Yheo"
 }
+###
+GET http://localhost:3000/api/wilder
+Content-Type: application/json
+###
+PUT http://localhost:3000/api/wilder
+Content-Type: application/json
+
+{
+   "id": 3,
+   "newData": {
+      "name": "Cmille"
+   }
+}
+###
+DELETE http://localhost:3000/api/wilder
+Content-Type: application/json
+
+{
+   "id": 3
+}

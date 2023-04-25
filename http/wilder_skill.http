@@ -1,7 +1,7 @@
-POST http://localhost:3000/api/wilder/skill
+PUT http://localhost:3000/api/addSkill
 Content-Type: application/json
 
 {
-   "wilderName": "Camille",
-   "skillName": "Javascript"
+   "wilderName": "Yheo",
+   "skillName": "PHP"
 }
