@@ -42,16 +42,5 @@ module.exports = {
       } catch (error) {
          res.send("error")
       }
-   },
-   addSkill: async (req, res) => {
-      try {
-         const wilderToUpdate = await dataSource
-            .getRepository(Skill)
-            .findOneBy({ name: req.body.wilderName })
-         console.log(wilderToUpdate);
-
-      } catch {
-
-      }
    }
 }

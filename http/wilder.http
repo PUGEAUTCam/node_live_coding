@@ -1,7 +1,6 @@
-PUT http://localhost:3000/api/wilder
+POST http://localhost:3000/api/wilder
 Content-Type: application/json
 
 {
-   "id": 6,
-   "name": "Test2"
+   "name": "Yheo"
 }

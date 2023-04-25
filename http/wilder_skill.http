@@ -1,0 +1,7 @@
+POST http://localhost:3000/api/wilder/skill
+Content-Type: application/json
+
+{
+   "wilderName": "Camille",
+   "skillName": "Javascript"
+}
