@@ -1,0 +1,7 @@
+PUT http://localhost:3000/api/skill
+Content-Type: application/json
+
+{
+   "id": 2,
+   "name": "Camille test"
+}
