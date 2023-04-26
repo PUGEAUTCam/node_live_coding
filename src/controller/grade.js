@@ -1,46 +1,41 @@
 const dataSource = require("../utils").dataSource;
 const Grade = require("../entity/Grade");
+const Wilder = require("../entity/Wilder");
+const Skill = require("../entity/Skill");
 
 module.exports = {
    create: async (req, res) => {
       try {
-         await dataSource
-            .getRepository(Grade)
-            .save(req.body)
-         res.send("Grade Created")
+         const wilderFromDB = await dataSource
+            .getRepository(Wilder)
+            .findOneBy({ name: req.body.wilder });
+         console.log("Wilder from DB", wilderFromDB);
+
+         const skillFromDB = await dataSource
+            .getRepository(Skill)
+            .findOneBy({ name: req.body.skill });
+         console.log("Skill from DB", skillFromDB);
+
+         await dataSource.getRepository(Grade).save({
+            grade: req.body.grade,
+            skill: skillFromDB,
+            wilder: wilderFromDB,
+         })
+         res.send("Created Grade");
 
       } catch (error) {
-         res.send("error")
+         console.log(error);
+         res.send("Error while creating skill");
       }
    },
    read: async (req, res) => {
       try {
-         const data = await dataSource
+         const gradesFromDB = await dataSource
             .getRepository(Grade)
             .find()
-         res.send(data);
+         res.send(gradesFromDB);
       } catch (error) {
-         res.send("error")
+         res.send("Error while reading grades");
       }
    },
-   delete: async (req, res) => {
-      try {
-         await dataSource
-            .getRepository(Grade)
-            .delete(req.body.id)
-         res.send("Grade supprimes");
-      } catch (error) {
-         res.send("error")
-      }
-   },
-   update: async (req, res) => {
-      try {
-         await dataSource
-            .getRepository(Grade)
-            .update(req.body.id, req.body.newData)
-         res.send("Grade modifies");
-      } catch (error) {
-         res.send("error")
-      }
-   }
 }

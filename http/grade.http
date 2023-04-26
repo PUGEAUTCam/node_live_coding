@@ -1,26 +1,10 @@
-POST http://localhost:3000/api/grade
+POST http://localhost:5001/api/grade
 Content-Type: application/json
 
 {
-   "name": "Debutant"
+   "grade": 3,
+   "wilder": "Camille",
+   "skill": "HTML"
 }
 ###
-GET http://localhost:3000/api/grade
-Content-Type: application/json
-###
-PUT http://localhost:3000/api/grade
-Content-Type: application/json
-
-{
-   "id": 2,
-   "newData": {
-      "name": "Cmille"
-   }
-}
-###
-DELETE http://localhost:3000/api/grade
-Content-Type: application/json
-
-{
-   "id": 1
-}
+GET http://localhost:5001/api/grade

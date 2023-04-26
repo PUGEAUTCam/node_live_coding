@@ -1,24 +1,24 @@
-POST http://localhost:3000/api/wilder
+POST http://localhost:5001/api/wilder
 Content-Type: application/json
 
 {
-   "name": "Yheo"
+   "name": "Camille"
 }
 ###
-GET http://localhost:3000/api/wilder
+GET http://localhost:5001/api/wilder
 Content-Type: application/json
 ###
-PUT http://localhost:3000/api/wilder
+PUT http://localhost:5001/api/wilder
 Content-Type: application/json
 
 {
-   "id": 3,
+   "id": 2,
    "newData": {
-      "name": "Cmille"
+      "name": "Test modif"
    }
 }
 ###
-DELETE http://localhost:3000/api/wilder
+DELETE http://localhost:5001/api/wilder
 Content-Type: application/json
 
 {
