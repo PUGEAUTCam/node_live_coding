@@ -2,6 +2,7 @@ const express = require("express");
 const dataSource = require("./utils").dataSource;
 const wilderController = require("./controller/wilder")
 const skillController = require("./controller/skill")
+const gradeController = require("./controller/grade")
 
 const app = express();
 //Autorisation express pour envoyer du JSON
@@ -22,6 +23,10 @@ app.get("/api/skill", skillController.read)
 app.delete("/api/skill", skillController.delete)
 app.put("/api/skill", skillController.update)
 
+app.post("/api/grade", gradeController.create)
+app.get("/api/grade", gradeController.read)
+app.delete("/api/grade", gradeController.delete)
+app.put("/api/grade", gradeController.update)
 
 app.use(function (req, res, next) {
    res.status(404).send('Sorry cant find that!');

@@ -1,13 +1,13 @@
 const dataSource = require("../utils").dataSource;
-const Skill = require("../entity/Skill");
+const Grade = require("../entity/Grade");
 
 module.exports = {
    create: async (req, res) => {
       try {
          await dataSource
-            .getRepository(Skill)
+            .getRepository(Grade)
             .save(req.body)
-         res.send("Skill Created")
+         res.send("Grade Created")
 
       } catch (error) {
          res.send("error")
@@ -16,7 +16,7 @@ module.exports = {
    read: async (req, res) => {
       try {
          const data = await dataSource
-            .getRepository(Skill)
+            .getRepository(Grade)
             .find()
          res.send(data);
       } catch (error) {
@@ -26,9 +26,9 @@ module.exports = {
    delete: async (req, res) => {
       try {
          await dataSource
-            .getRepository(Skill)
+            .getRepository(Grade)
             .delete(req.body.id)
-         res.send("Skill supprimes");
+         res.send("Grade supprimes");
       } catch (error) {
          res.send("error")
       }
@@ -36,9 +36,9 @@ module.exports = {
    update: async (req, res) => {
       try {
          await dataSource
-            .getRepository(Skill)
+            .getRepository(Grade)
             .update(req.body.id, req.body.newData)
-         res.send("Skill modifies");
+         res.send("Grade modifies");
       } catch (error) {
          res.send("error")
       }
